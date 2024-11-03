@@ -73,7 +73,7 @@ public Properties p;
 	@AfterClass(groups= {"Sanity","Regression","Master"})
 	public void tearDown()
 	{
-		driver.quit();
+		// driver.quit();
 	}
 	
 	public String randomeString()

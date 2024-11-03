@@ -32,8 +32,15 @@ public class HomePage extends BasePage{
 	@FindBy(xpath = "//i[@class='fa fa-search']")
 	WebElement searchButton;
 	
-
-
+	@FindBy(xpath= "//a[@href='http://localhost/opencartsite/upload/index.php?route=common/home']")
+	WebElement homeButton;
+	
+	@FindBy(xpath = "(//button[@type='button']/following-sibling::button)[1]")
+	WebElement wishListTT;
+	
+	@FindBy(xpath = "(//button[@type='button']/following-sibling::button)[2]")
+	WebElement compareTT;
+	
 	public void clickMyAccount()
 	{
 		lnkMyaccount.click();
@@ -72,7 +79,29 @@ public class HomePage extends BasePage{
 		wait.until(ExpectedConditions.visibilityOf(searchBar));
 		searchBar.click();
 		searchBar.sendKeys("Lexus Car");
-	
-	
+
 	}
+	
+	
+	public void clickHomeBtn() {
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+		wait.until(ExpectedConditions.elementToBeClickable(homeButton)).click();
+
+	}
+	
+	public String getAddtoWishListToolTip() {
+		Actions a = new Actions(driver);
+		a.moveToElement(wishListTT);
+		return wishListTT.getAttribute("data-original-title");
+
+	}
+	public String getCompareProductToolTip() {
+		Actions a = new Actions(driver);
+		a.moveToElement(compareTT);
+		return compareTT.getAttribute("data-original-title");
+
+	}
+	
+	
 }

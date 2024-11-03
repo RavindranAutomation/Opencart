@@ -74,7 +74,13 @@ public class ExtentReportManager implements ITestListener {
 		test = extent.createTest(result.getTestClass().getName());
 		test.assignCategory(result.getMethod().getGroups()); // to display groups in report
 		test.log(Status.PASS,result.getName()+" got successfully executed");
-		
+		try {
+			String imgPath = new BaseClass().captureScreen(result.getName());
+			test.addScreenCaptureFromPath(imgPath);
+			
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 	}
 
 	public void onTestFailure(ITestResult result) {
