@@ -14,7 +14,7 @@ public class MyAccountPage extends BasePage{
 	WebElement msgHeading;
 	
 	
-	@FindBy(xpath = "//div[@class='list-group']//a[text()='Logout']")   //added in step6
+	@FindBy(xpath = "//a[@href='http://localhost/opencartsite/upload/index.php?route=account/logout']")   //added in step6
 	WebElement lnkLogout;
 	
 	

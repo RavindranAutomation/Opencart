@@ -15,6 +15,7 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.CapabilityType;
@@ -50,7 +51,9 @@ public Properties p;
 			//browser
 		switch (browserName.toLowerCase()) {
 		case "chrome":
-			driver = new ChromeDriver();
+			ChromeOptions options = new ChromeOptions(); 
+			options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"}); 
+			driver = new ChromeDriver(options); 
 			break;
 		case "edge":
 			driver = new EdgeDriver();

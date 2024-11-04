@@ -42,6 +42,18 @@ public class SearchResultsPage extends BasePage{
 	@FindBy(xpath = "//img[@src='http://localhost/opencartsite/upload/image/cache/catalog/demo/imac_1-228x228.jpg']")
 	WebElement iMacImgLink;
 	
+	
+	@FindBy(xpath = "//a[@href='http://localhost/opencartsite/upload/index.php?route=product/product&product_id=41&search=iMac']//following::button[1]")
+	WebElement iMacAddToCartBtn;
+	
+	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
+	WebElement cartAddedSuccessMessage;
+	
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']/a[2]")
+	WebElement shoppingCartLink;
+	
+	
+	
 	public String verifyResultsHeader() {
 		return searchResultsHeader.getText();
 
@@ -99,6 +111,21 @@ public class SearchResultsPage extends BasePage{
 
 	public void clickImacImg() {
 		iMacImgLink.click();
+
+	}
+	
+	public void clickiMacAddToCartBtn() {
+		iMacAddToCartBtn.click();
+
+	}
+	
+	public boolean isCartAddedSuccessMessageDisplayed() {
+		return cartAddedSuccessMessage.isDisplayed();
+
+	}
+	
+	public void clickShoppingCartLink() {
+		shoppingCartLink.click();
 
 	}
 
