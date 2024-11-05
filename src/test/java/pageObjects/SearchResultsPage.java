@@ -33,6 +33,12 @@ public class SearchResultsPage extends BasePage{
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	WebElement compareSuccessMessage;
 	
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']//a[contains(text(), 'iMac')]")
+	WebElement wishListSuccessMessage;
+	
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']//a[contains(text(), 'iMac')]//following::a[1]")
+	WebElement wishListLink;
+	
 	@FindBy(xpath = "(//a[@href='http://localhost/opencartsite/upload/index.php?route=product/compare'])[1]")
 	WebElement productComparisonLink;
 	
@@ -126,6 +132,21 @@ public class SearchResultsPage extends BasePage{
 	
 	public void clickShoppingCartLink() {
 		shoppingCartLink.click();
+
+	}
+	
+	public void clickWishlistButton() {
+		iMacWishListBtn.click();
+
+	}
+	
+	public boolean iswishListSuccessMessageDisplayed() {
+		return wishListSuccessMessage.isDisplayed();
+
+	}
+	
+	public void clickWishlistLink() {
+		wishListLink.click();
 
 	}
 

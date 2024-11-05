@@ -41,6 +41,12 @@ public class HomePage extends BasePage{
 	@FindBy(xpath = "(//button[@type='button']/following-sibling::button)[2]")
 	WebElement compareTT;
 	
+	 @FindBy(xpath = "(//span[@class='hidden-xs hidden-sm hidden-md'])[5]")
+	 WebElement shoppingcartHeaderLink;
+	 
+	 @FindBy(xpath = "//a[@href='http://localhost/opencartsite/upload/index.php?route=information/sitemap']")
+	 WebElement sitemapFooterLink;
+	 
 	public void clickMyAccount()
 	{
 		lnkMyaccount.click();
@@ -100,6 +106,15 @@ public class HomePage extends BasePage{
 		Actions a = new Actions(driver);
 		a.moveToElement(compareTT);
 		return compareTT.getAttribute("data-original-title");
+
+	}
+	
+	public void clickshoppingcartHeaderLink() {
+		shoppingcartHeaderLink.click();
+	}
+	
+	public void clicksitemapFooterLink() {
+		sitemapFooterLink.click();
 
 	}
 	

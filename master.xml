@@ -20,7 +20,9 @@
       <!-- <class name="testCases.TC005_ToolTipTest"/> -->
      <!-- <class name="testCases.TC006_ProductCompareTest"/> -->
       <!-- <class name="testCases.TC007_PDPTest"/> -->
-      <class name="testCases.TC008_AddToCartTest"/>
+    <!--<class name="testCases.TC008_AddToCartTest"/>-->
+      
+    <class name="testCases.TC009_ShoppingCartTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

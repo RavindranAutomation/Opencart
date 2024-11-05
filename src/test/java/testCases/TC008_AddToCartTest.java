@@ -1,6 +1,7 @@
 package testCases;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -10,59 +11,62 @@ import pageObjects.LoginPage;
 import pageObjects.MyAccountPage;
 import pageObjects.ProductDisplayPage;
 import pageObjects.SearchResultsPage;
+import pageObjects.WishlistPage;
 import testBase.BaseClass;
 
 public class TC008_AddToCartTest extends BaseClass {
-	HomePage hp;
-	LoginPage lp;
-	SearchResultsPage sp;
+	HomePage homePage;
+	LoginPage loginPage;
+	SearchResultsPage searchResultsPage;
 	ProductDisplayPage pdp;
-	MyAccountPage map;
-	CartPage cp;
+	MyAccountPage myAccPage;
+	CartPage cartPage;
+	WishlistPage wishPage;
 
 	@BeforeMethod
 	public void loginTest() {
 		try {
-			hp = new HomePage(driver);
-			hp.clickMyAccount();
-			hp.clickLogin();
+			homePage = new HomePage(driver);
+			homePage.clickMyAccount();
+			homePage.clickLogin();
 
 			// Login
-			LoginPage lp = new LoginPage(driver);
-			lp.setEmail(p.getProperty("email"));
-			lp.setPassword(p.getProperty("password"));
-			lp.clickLogin();
+			loginPage = new LoginPage(driver);
+			loginPage.setEmail(p.getProperty("email"));
+			loginPage.setPassword(p.getProperty("password"));
+			loginPage.clickLogin();
 
-			hp.enterProductName();
-			hp.clickSearchButton();
+			homePage.enterProductName();
+			homePage.clickSearchButton();
 
 		} catch (Exception e) {
 
 			e.printStackTrace();
 			Assert.fail(e + "Exeception is caused hence TC failed");
 		}
+		searchResultsPage = new SearchResultsPage(driver);
+		String expHeader = searchResultsPage.verifyResultsHeader();
+
+		Assert.assertEquals(expHeader, "Search - iMac");
 
 	}
 
 	@Test(priority = 1)
 	public void verifyAddtoCartFromSearchResultsPage() {
-		sp = new SearchResultsPage(driver);
-		String expHeader = sp.verifyResultsHeader();
+		
 
-		Assert.assertEquals(expHeader, "Search - iMac");
-
-		cp = new CartPage(driver);
+		cartPage = new CartPage(driver);
 
 		try {
-			sp.clickiMacAddToCartBtn();
+			searchResultsPage.clickiMacAddToCartBtn();
 
-			if (sp.verifyCompareSuccessMessage() == true) {
-				sp.clickShoppingCartLink();
+			if (searchResultsPage.verifyCompareSuccessMessage() == true) {
+				searchResultsPage.clickShoppingCartLink();
 
-				if (cp.isShoppingCartProductImageDisplayed() == true) {
-					cp.clickRemoveBtn();
+				if (cartPage.isShoppingCartProductImageDisplayed() == true) {
+					cartPage.clickRemoveBtn();
 					Assert.assertEquals(driver.getTitle(), "Shopping Cart");
-					Assert.assertEquals(cp.getShoppingCartProductname(), "iMac");
+					Assert.assertEquals(cartPage.getShoppingCartProductname(), "iMac");
 				}
 
 			} else {
@@ -71,6 +75,52 @@ public class TC008_AddToCartTest extends BaseClass {
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail(e + "test Case is Failed");
+		}
+
+	}
+	@Test(priority = 2)
+	public void verifyAddtoCartFromWishlistPage() {
+		searchResultsPage.clickWishlistButton();
+		Assert.assertEquals(searchResultsPage.iswishListSuccessMessageDisplayed(), true);
+		searchResultsPage.clickWishlistLink();
+		
+		wishPage = new WishlistPage(driver);
+		
+		
+		if (wishPage.isWishlistSubmenuDisplayed()) {
+			
+			wishPage.clickwishlistAddToCartBtn();
+			Assert.assertTrue(true);
+			if (wishPage.iswishlistToCartSuccessMessageDisplayed()) {
+				wishPage.clickwishlistShoppingcartLink();
+				Assert.assertTrue(true);
+				
+			}else {
+				Assert.fail();
+			}
+			
+		}
+		
+		if (cartPage.isShoppingCartProductImageDisplayed() == true) {
+			Assert.assertEquals(driver.getTitle(), "Shopping Cart");
+			Assert.assertEquals(cartPage.getShoppingCartProductname(), "iMac");
+			cartPage.clickRemoveBtn();
+		}
+		else {
+			Assert.fail();
+		}
+	
+
+	}
+	@AfterMethod
+	public void logoutTest() {
+		myAccPage = new MyAccountPage(driver);
+		try {
+			homePage.clickMyAccount();
+			myAccPage.clickLogout();
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail(e + "is caused");
 		}
 
 	}

@@ -51,9 +51,9 @@ public Properties p;
 			//browser
 		switch (browserName.toLowerCase()) {
 		case "chrome":
-			ChromeOptions options = new ChromeOptions(); 
-			options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"}); 
-			driver = new ChromeDriver(options); 
+//			ChromeOptions options = new ChromeOptions(); 
+//			options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"}); 
+			driver = new ChromeDriver(); 
 			break;
 		case "edge":
 			driver = new EdgeDriver();
