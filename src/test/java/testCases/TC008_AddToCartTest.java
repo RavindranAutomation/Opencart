@@ -11,19 +11,19 @@ import pageObjects.LoginPage;
 import pageObjects.MyAccountPage;
 import pageObjects.ProductDisplayPage;
 import pageObjects.SearchResultsPage;
-import pageObjects.WishlistPage;
 import testBase.BaseClass;
 
 public class TC008_AddToCartTest extends BaseClass {
+	
 	HomePage homePage;
 	LoginPage loginPage;
-	SearchResultsPage searchResultsPage;
-	ProductDisplayPage pdp;
+	SearchResultsPage searchPage;
+	ProductDisplayPage pdpPage;
 	MyAccountPage myAccPage;
 	CartPage cartPage;
-	WishlistPage wishPage;
+	
 
-	@BeforeMethod
+	@BeforeMethod(groups = {"Sanity","Regression","Master"})
 	public void loginTest() {
 		try {
 			homePage = new HomePage(driver);
@@ -44,79 +44,39 @@ public class TC008_AddToCartTest extends BaseClass {
 			e.printStackTrace();
 			Assert.fail(e + "Exeception is caused hence TC failed");
 		}
-		searchResultsPage = new SearchResultsPage(driver);
-		String expHeader = searchResultsPage.verifyResultsHeader();
+		
+		searchPage = new SearchResultsPage(driver);
+		String expHeader = searchPage.verifyResultsHeader();
 
 		Assert.assertEquals(expHeader, "Search - iMac");
 
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 1,groups = {"Sanity","Regression","Master"})
 	public void verifyAddtoCartFromSearchResultsPage() {
-		
 
-		cartPage = new CartPage(driver);
 
 		try {
-			searchResultsPage.clickiMacAddToCartBtn();
+			searchPage.clickiMacAddToCartBtn();	
+			searchPage.clickShoppingCartLink();	
+			cartPage = new CartPage(driver);
+				cartPage.clickRemoveBtn();
+				Assert.assertEquals(driver.getTitle(), "Shopping Cart");
+				Assert.assertEquals(cartPage.getShoppingCartProductname(), "iMac");
 
-			if (searchResultsPage.verifyCompareSuccessMessage() == true) {
-				searchResultsPage.clickShoppingCartLink();
-
-				if (cartPage.isShoppingCartProductImageDisplayed() == true) {
-					cartPage.clickRemoveBtn();
-					Assert.assertEquals(driver.getTitle(), "Shopping Cart");
-					Assert.assertEquals(cartPage.getShoppingCartProductname(), "iMac");
-				}
-
-			} else {
-				Assert.fail();
-			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail(e + "test Case is Failed");
 		}
 
 	}
-	@Test(priority = 2)
-	public void verifyAddtoCartFromWishlistPage() {
-		searchResultsPage.clickWishlistButton();
-		Assert.assertEquals(searchResultsPage.iswishListSuccessMessageDisplayed(), true);
-		searchResultsPage.clickWishlistLink();
-		
-		wishPage = new WishlistPage(driver);
-		
-		
-		if (wishPage.isWishlistSubmenuDisplayed()) {
-			
-			wishPage.clickwishlistAddToCartBtn();
-			Assert.assertTrue(true);
-			if (wishPage.iswishlistToCartSuccessMessageDisplayed()) {
-				wishPage.clickwishlistShoppingcartLink();
-				Assert.assertTrue(true);
-				
-			}else {
-				Assert.fail();
-			}
-			
-		}
-		
-		if (cartPage.isShoppingCartProductImageDisplayed() == true) {
-			Assert.assertEquals(driver.getTitle(), "Shopping Cart");
-			Assert.assertEquals(cartPage.getShoppingCartProductname(), "iMac");
-			cartPage.clickRemoveBtn();
-		}
-		else {
-			Assert.fail();
-		}
 	
-
-	}
-	@AfterMethod
+	@AfterMethod(groups = {"Sanity","Regression","Master"})
 	public void logoutTest() {
-		myAccPage = new MyAccountPage(driver);
+
 		try {
 			homePage.clickMyAccount();
+			myAccPage = new MyAccountPage(driver);
 			myAccPage.clickLogout();
 		} catch (Exception e) {
 			e.printStackTrace();

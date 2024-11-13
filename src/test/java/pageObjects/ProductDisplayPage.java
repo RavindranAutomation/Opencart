@@ -10,21 +10,23 @@ import org.openqa.selenium.support.FindBy;
 
 public class ProductDisplayPage extends BasePage {
 
+	
+
 	public ProductDisplayPage(WebDriver driver) {
 		super(driver);
-
+		
 	}
 
-	@FindBy(xpath = "//img[@src='http://localhost/opencartsite/upload/image/cache/catalog/demo/imac_1-228x228.jpg']")
+	@FindBy(xpath = "//img[@src='http://localhost/opencart/upload/image/cache/catalog/demo/imac_1-228x228.jpg']")
 	WebElement imacThumbnailImg;
 
 	@FindBy(xpath = "//button[@title='Next (Right arrow key)']")
 	WebElement nextArrowBtn;
 
-	@FindBy(xpath = "//img[@src='http://localhost/opencartsite/upload/image/cache/catalog/demo/imac_3-74x74.jpg']")
+	@FindBy(xpath = "//img[@src='http://localhost/opencart/upload/image/cache/catalog/demo/imac_3-74x74.jpg']")
 	WebElement iMacSideView;
 
-	@FindBy(xpath = "//img[@src='http://localhost/opencartsite/upload/image/cache/catalog/demo/imac_2-74x74.jpg']")
+	@FindBy(xpath = "//img[@src='http://localhost/opencart/upload/image/cache/catalog/demo/imac_2-74x74.jpg']")
 	WebElement iMacTiltView;
 
 	@FindBy(xpath = "//div[@class='btn-group']//following::h1")
@@ -60,7 +62,12 @@ public class ProductDisplayPage extends BasePage {
 
 	public void clickNextArrowButton() throws AWTException {
 		for (int i = 0; i <= 1; i++) {
-			nextArrowBtn.click();
+			try {
+				clickOnElement(nextArrowBtn, 0);
+			} catch (Exception e) {
+				jSClick(nextArrowBtn);
+				e.printStackTrace();
+			}
 		}
 
 		Robot r = new Robot();
@@ -75,8 +82,13 @@ public class ProductDisplayPage extends BasePage {
 	}
 
 	public void clickiMacSideView() throws AWTException, InterruptedException {
-		iMacSideView.click();
-		Thread.sleep(3000);
+		try {
+			clickOnElement(iMacSideView, 0);
+		} catch (Exception e) {
+			jSClick(iMacSideView);
+	
+		}
+		Thread.sleep(1000);
 		Robot r = new Robot();
 		r.keyPress(KeyEvent.VK_ESCAPE);
 		r.keyRelease(KeyEvent.VK_ESCAPE);
@@ -89,8 +101,11 @@ public class ProductDisplayPage extends BasePage {
 	}
 
 	public void clickiMacTiltVieww() throws AWTException, InterruptedException {
-		iMacTiltView.click();
-		Thread.sleep(3000);
+		
+			jSClick(iMacTiltView);
+	
+
+		Thread.sleep(1000);
 		Robot r = new Robot();
 		r.keyPress(KeyEvent.VK_ESCAPE);
 		r.keyRelease(KeyEvent.VK_ESCAPE);

@@ -8,13 +8,14 @@ public class MyAccountPage extends BasePage{
 
 	public MyAccountPage(WebDriver driver) {
 		super(driver);
+		
 	}
 
 	@FindBy(xpath = "//h2[text()='My Account']") // MyAccount Page heading
 	WebElement msgHeading;
 	
 	
-	@FindBy(xpath = "//a[@href='http://localhost/opencartsite/upload/index.php?route=account/logout']")   //added in step6
+	@FindBy(xpath = "//a[@href='http://localhost/opencart/upload/index.php?route=account/logout']")   //added in step6
 	WebElement lnkLogout;
 	
 	
@@ -32,7 +33,10 @@ public class MyAccountPage extends BasePage{
 	
 	public void clickLogout()
 	{
-		lnkLogout.click();
+		
+			jSClick(lnkLogout);
+			
+	
 	}
 	
 	

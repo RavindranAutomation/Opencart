@@ -9,32 +9,35 @@ import pageObjects.SearchResultsPage;
 import testBase.BaseClass;
 
 public class TC004_SearchTest extends BaseClass {
-	HomePage hp;
-	LoginPage lp;
-	SearchResultsPage sp;
+	
+	LoginPage loginPage;
+	HomePage homePage;
+	SearchResultsPage searchPage;
 
-	@Test(priority = 1)
+	@Test(priority = 1,groups = {"Sanity","Regression","Master"})
 	public void verifyValidProductSearchTest() {
 		logger.info("***** Starting TC004_Searchtest *****");
 		try {
 			// HomePage
-			hp = new HomePage(driver);
-			hp.clickMyAccount();
-			hp.clickLogin();
+			
+			homePage = new HomePage(driver);
+			homePage.clickMyAccount();
+			homePage.clickLogin();
 
 			// Login
-			LoginPage lp = new LoginPage(driver);
-			lp.setEmail(p.getProperty("email"));
-			lp.setPassword(p.getProperty("password"));
-			lp.clickLogin();
+			loginPage = new LoginPage(driver);
+			loginPage.setEmail(p.getProperty("email"));
+			loginPage.setPassword(p.getProperty("password"));
+			loginPage.clickLogin();
 
-			hp.enterProductName();
-			hp.clickSearchButton();
+			homePage.enterProductName();
+			homePage.clickSearchButton();
 
-			sp = new SearchResultsPage(driver);
-			String expHeader = sp.verifyResultsHeader();
-			boolean iMacImgExp = sp.isiMacDisplayed();
-			boolean iMacnNameExp = sp.isiMacNameDisplayed();
+			searchPage = new SearchResultsPage(driver);
+			
+			String expHeader = searchPage.verifyResultsHeader();
+			boolean iMacImgExp = searchPage.isiMacDisplayed();
+			boolean iMacnNameExp = searchPage.isiMacNameDisplayed();
 
 			if (expHeader.equals("Search - iMac")) {
 
@@ -63,11 +66,11 @@ public class TC004_SearchTest extends BaseClass {
 	public void verifyInvalidProductSearchTest() {
 
 		try {
-			hp.clearSearchBar();
-			hp.enterInvalidProductName();
-			hp.clickSearchButton();
+			homePage.clearSearchBar();
+			homePage.enterInvalidProductName();
+			homePage.clickSearchButton();
 
-			boolean searchResultsExp = sp.isNoSearchResultsDisplayed();
+			boolean searchResultsExp = searchPage.isNoSearchResultsDisplayed();
 
 			Assert.assertEquals(searchResultsExp, true);
 		} catch (Exception e) {
@@ -81,10 +84,10 @@ public class TC004_SearchTest extends BaseClass {
 	@Test(priority = 3)
 	public void verifyEmptyProductSearchTest() {
 		try {
-			hp.clearSearchBar();
-			hp.clickSearchButton();
+			homePage.clearSearchBar();
+			homePage.clickSearchButton();
 
-			boolean searchResultsExp = sp.isNoSearchResultsDisplayed();
+			boolean searchResultsExp = searchPage.isNoSearchResultsDisplayed();
 			Assert.assertEquals(searchResultsExp, true);
 		} catch (Exception e) {
 			e.printStackTrace();

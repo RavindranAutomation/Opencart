@@ -8,17 +8,14 @@
     <parameter name="os" value="Windows"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.TC009_ShoppingCartTest">
+      <class name="testCases.TC011_CheckoutTest">
         <methods>
           <include name="tearDown"/>
-          <include name="verifyNavigationFromShoppingcartHeaderLink"/>
-          <include name="logoutTest"/>
-          <include name="verifyNavigationFromFooterSitemap"/>
           <include name="setup"/>
-          <include name="verifyNavigationFromSuccessMessage"/>
           <include name="loginTest"/>
+          <include name="verify_CheckOut_With_ExistingAddress"/>
         </methods>
-      </class> <!-- testCases.TC009_ShoppingCartTest -->
+      </class> <!-- testCases.TC011_CheckoutTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Master Suite] -->

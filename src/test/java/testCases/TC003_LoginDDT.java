@@ -19,6 +19,10 @@ Data is invalid - login success - test fail  - logout
 
 
 public class TC003_LoginDDT extends BaseClass {
+	
+	HomePage homePage;
+	LoginPage loginPage;
+	MyAccountPage myAccPage;
 
 	@Test(dataProvider="LoginData", dataProviderClass=DataProviders.class,groups="Datadriven")// getting data provider from different class
 	public void verify_loginDDT(String email, String pwd, String exp) throws InterruptedException
@@ -28,26 +32,29 @@ public class TC003_LoginDDT extends BaseClass {
 		try
 		{
 		//HomePage
-		HomePage hp=new HomePage(driver);
-		hp.clickMyAccount();
-		hp.clickLogin();
+			homePage = new HomePage(driver);
+			homePage.clickMyAccount();
+			homePage.clickLogin();
 		
-		//Login
-		LoginPage lp=new LoginPage(driver);
-		lp.setEmail(email);
-		lp.setPassword(pwd);
-		lp.clickLogin();
+		//Login	
+			
+			loginPage = new LoginPage(driver);
+		loginPage.setEmail(email);
+		loginPage.setPassword(pwd);
+		loginPage.clickLogin();
+		
+		
 			
 		//MyAccount
-		MyAccountPage macc=new MyAccountPage(driver);
-		boolean targetPage=macc.isMyAccountPageExists();
+		myAccPage = new MyAccountPage(driver);
+		boolean targetPage=myAccPage.isMyAccountPageExists();
 		
 		
 		if(exp.equalsIgnoreCase("Valid"))
 		{
 			if(targetPage==true)
 			{			
-				macc.clickLogout();
+				myAccPage.clickLogout();
 				Assert.assertTrue(true);
 				
 			}
@@ -61,7 +68,7 @@ public class TC003_LoginDDT extends BaseClass {
 		{
 			if(targetPage==true)
 			{
-				macc.clickLogout();
+				myAccPage.clickLogout();
 				Assert.assertTrue(false);
 				
 			}

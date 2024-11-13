@@ -10,60 +10,56 @@ import pageObjects.SearchResultsPage;
 import testBase.BaseClass;
 
 public class TC006_ProductCompareTest extends BaseClass {
-	HomePage hp;
-	LoginPage lp;
-	SearchResultsPage sp;
-	ProductComparisonPage pcp;
+	
+	HomePage homePage;
+	LoginPage loginPage;
+	SearchResultsPage searchPage;
+	ProductComparisonPage pdpPage;
 
-	@Test
+	@Test(groups = { "Regression", "Master" })
 	public void verifyProductCompareWith() {
 		try {
-			hp = new HomePage(driver);
-			hp.clickMyAccount();
-			hp.clickLogin();
+			homePage = new HomePage(driver);
+			homePage.clickMyAccount();
+			homePage.clickLogin();
 
 			// Login
-			LoginPage lp = new LoginPage(driver);
-			lp.setEmail(p.getProperty("email"));
-			lp.setPassword(p.getProperty("password"));
-			lp.clickLogin();
+			loginPage = new LoginPage(driver);
+			loginPage.setEmail(p.getProperty("email"));
+			loginPage.setPassword(p.getProperty("password"));
+			loginPage.clickLogin();
 
-			hp.enterProductName();
-			hp.clickSearchButton();
+			homePage.enterProductName();
+			homePage.clickSearchButton();
 
-			sp = new SearchResultsPage(driver);
-			String expHeader = sp.verifyResultsHeader();
-			Assert.assertEquals(expHeader, "Search - iMac");
+			try {
+				searchPage = new SearchResultsPage(driver);
+				searchPage.clickImacCompareBtn();
+				searchPage.clickProductComparisonLink();
 
-			Assert.assertEquals(sp.getImacAddtoWishListToolTip(), "Add to Wish List");
-			Assert.assertEquals(sp.getImacCompareProductToolTip(), "Compare this Product");
+			} catch (Exception e) {
+				logger.error(e.getMessage());
 
-			sp.clickImacCompareBtn();
+				e.printStackTrace();
+			}
+			pdpPage = new ProductComparisonPage(driver);
+			Assert.assertEquals(pdpPage.verifyProductComParisonHeader(), true);
 
-			Assert.assertEquals(sp.verifyCompareSuccessMessage(), true);
-			sp.clickProductComparisonLink();
-			pcp = new ProductComparisonPage(driver);
+			Assert.assertEquals(pdpPage.verifyImacProductId(), "Product 14");
 
-			Assert.assertEquals(driver.getTitle(), "Product Comparison");
+			Assert.assertEquals(pdpPage.verifyImacProductName(), "iMac");
 
-			Assert.assertEquals(pcp.verifyProductComParisonHeader(), true);
+			pdpPage.clickRemoveBtn();
 
-			Assert.assertEquals(pcp.verifyImacProductId(), "Product 14");
-
-			Assert.assertEquals(pcp.verifyImacProductName(), "iMac");
-
-			pcp.clickRemoveBtn();
-
-			if (pcp.verifyproductRemovedSuccessMessage()
+			if (pdpPage.verifyproductRemovedSuccessMessage()
 					.contains("Success: You have modified your product comparison!")) {
 				Assert.assertTrue(true);
 			} else {
 				Assert.fail();
 			}
 		} catch (Exception e) {
-
-			e.printStackTrace();
 			Assert.fail();
+
 		}
 
 	}

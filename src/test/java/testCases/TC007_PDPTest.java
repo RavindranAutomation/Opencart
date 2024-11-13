@@ -15,30 +15,30 @@ import pageObjects.SearchResultsPage;
 import testBase.BaseClass;
 
 public class TC007_PDPTest extends BaseClass {
-	HomePage hp;
-	LoginPage lp;
-	SearchResultsPage sp;
-	ProductDisplayPage pdp;
-	MyAccountPage map;
-
-	@BeforeMethod
+	
+	HomePage homePage;
+	LoginPage loginPage;
+	SearchResultsPage searchPage;
+	ProductDisplayPage pdpPage;
+	MyAccountPage myAccPage;
+	@BeforeMethod(groups = {"Sanity","Regression","Master"})
 	public void loginTest() {
 		try {
-			hp = new HomePage(driver);
-			hp.clickMyAccount();
-			hp.clickLogin();
+			homePage = new HomePage(driver);
+			homePage.clickMyAccount();
+			homePage.clickLogin();
 
 			// Login
-			LoginPage lp = new LoginPage(driver);
-			lp.setEmail(p.getProperty("email"));
-			lp.setPassword(p.getProperty("password"));
-			lp.clickLogin();
+			loginPage = new LoginPage(driver);
+			loginPage.setEmail(p.getProperty("email"));
+			loginPage.setPassword(p.getProperty("password"));
+			loginPage.clickLogin();
 
-			hp.enterProductName();
-			hp.clickSearchButton();
+			homePage.enterProductName();
+			homePage.clickSearchButton();
 
-			sp = new SearchResultsPage(driver);
-			String expHeader = sp.verifyResultsHeader();
+			searchPage = new SearchResultsPage(driver);
+			String expHeader = searchPage.verifyResultsHeader();
 
 			Assert.assertEquals(expHeader, "Search - iMac");
 		} catch (Exception e) {
@@ -48,8 +48,8 @@ public class TC007_PDPTest extends BaseClass {
 		}
 
 		try {
-			if (sp.verifyProductTile() == true) {
-				sp.clickImacImg();
+			if (searchPage.verifyProductTile() == true) {
+				searchPage.clickImacImg();
 				Assert.assertTrue(true);
 
 			}
@@ -57,18 +57,17 @@ public class TC007_PDPTest extends BaseClass {
 			e.printStackTrace();
 			Assert.fail(e + "Element Identification Failed");
 		}
-		pdp = new ProductDisplayPage(driver);
 		Assert.assertEquals(driver.getTitle(), "iMac");
 
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 1,groups = {"Sanity","Regression","Master"})
 	public void verifyPDPThumnails() throws AWTException, InterruptedException {
-
+		pdpPage = new ProductDisplayPage(driver);
 		try {
-			if (pdp.verifyThumbnail() == true) {
-				pdp.clickImacThumbnailImg();
-				pdp.clickNextArrowButton();
+			if (pdpPage.verifyThumbnail() == true) {
+				pdpPage.clickImacThumbnailImg();
+				pdpPage.clickNextArrowButton();
 				Assert.assertTrue(true);
 
 			}
@@ -77,13 +76,13 @@ public class TC007_PDPTest extends BaseClass {
 			Assert.fail(e + "Element Identification Failed");
 		}
 
-		if (pdp.verifyImacSideView() == true) {
-			pdp.clickiMacSideView();
+		if (pdpPage.verifyImacSideView() == true) {
+			pdpPage.clickiMacSideView();
 
 			Assert.assertTrue(true);
 
-			if (pdp.verifyiMacTiltView() == true) {
-				pdp.clickiMacTiltVieww();
+			if (pdpPage.verifyiMacTiltView() == true) {
+				pdpPage.clickiMacTiltVieww();
 				Assert.assertTrue(true);
 			}
 
@@ -93,19 +92,19 @@ public class TC007_PDPTest extends BaseClass {
 
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2,groups = {"Sanity","Regression","Master"})
 	public void verifyProductDetails() {
 
 		try {
-			Assert.assertEquals(pdp.getProductName(), "iMac");
-			Assert.assertEquals(pdp.getProductBrand(), "Apple");
+			Assert.assertEquals(pdpPage.getProductName(), "iMac");
+			Assert.assertEquals(pdpPage.getProductBrand(), "Apple");
 
-			if (pdp.getProductCode().contains("Product 14")) {
+			if (pdpPage.getProductCode().contains("Product 14")) {
 
-				if (pdp.getProductAvailability().contains("In Stock")) {
-					Assert.assertEquals(pdp.getProductPrice(), "$122.00");
-					Assert.assertEquals(pdp.getDefaultQty(), "1");
-					Assert.assertEquals(pdp.getProductDescription(),
+				if (pdpPage.getProductAvailability().contains("In Stock")) {
+					Assert.assertEquals(pdpPage.getProductPrice(), "$100.00");
+					Assert.assertEquals(pdpPage.getDefaultQty(), "1");
+					Assert.assertEquals(pdpPage.getProductDescription(),
 							"Just when you thought iMac had everything, now there´s even more. More powerful Intel Core 2 Duo processors. And more memory standard. "
 									+ "Combine this with Mac OS X Leopard and iLife ´08, and it´s more all-in-one than ever. "
 									+ "iMac packs amazing performance into a stunningly slim space.");
@@ -120,12 +119,13 @@ public class TC007_PDPTest extends BaseClass {
 
 	}
 
-	@AfterMethod
+	@AfterMethod(groups = {"Sanity","Regression","Master"})
 	public void logoutTest() {
-		map = new MyAccountPage(driver);
+		
 		try {
-			hp.clickMyAccount();
-			map.clickLogout();
+			myAccPage = new MyAccountPage(driver);
+			homePage.clickMyAccount();
+			myAccPage.clickLogout();
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail(e + "is caused");

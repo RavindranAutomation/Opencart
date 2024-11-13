@@ -8,16 +8,16 @@ public class SitemapPage extends BasePage {
 
 	public SitemapPage(WebDriver driver) {
 		super(driver);
-		
+		// TODO Auto-generated constructor stub
 	}
-	
-	@FindBy(xpath = "(//a[@href='http://localhost/opencartsite/upload/index.php?route=account/order'])[3]")
+
+	@FindBy(xpath = "(//a[@href='http://localhost/opencart/upload/index.php?route=account/order'])[3]")
 	WebElement shoppingcartLink;
-	
+
 	public void clickshoppingcartLink() {
-		shoppingcartLink.click();
+
+		jSClick(shoppingcartLink);
 
 	}
-	
 
 }

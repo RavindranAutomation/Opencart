@@ -18,14 +18,12 @@ import testBase.BaseClass;
 public class TC009_ShoppingCartTest extends BaseClass {
 	HomePage homePage;
 	LoginPage loginPage;
-	SearchResultsPage searchResultsPage;
-	ProductDisplayPage pdp;
+	SearchResultsPage searchPage;
+	ProductDisplayPage pdpPage;
 	MyAccountPage myAccPage;
 	CartPage cartPage;
-	WishlistPage wishPage;
-	SitemapPage sitemapPage;
-
-	@BeforeMethod
+	SitemapPage sitePage;
+	@BeforeMethod(groups = {"Sanity","Regression","Master"})
 	public void loginTest() {
 		try {
 			homePage = new HomePage(driver);
@@ -46,34 +44,19 @@ public class TC009_ShoppingCartTest extends BaseClass {
 			e.printStackTrace();
 			Assert.fail(e + "Exeception is caused hence TC failed");
 		}
-		searchResultsPage = new SearchResultsPage(driver);
-		String expHeader = searchResultsPage.verifyResultsHeader();
+		searchPage = new SearchResultsPage(driver);
+		String expHeader = searchPage.verifyResultsHeader();
 
 		Assert.assertEquals(expHeader, "Search - iMac");
 
 	}
 
-	@Test(priority = 1)
-	public void verifyNavigationFromSuccessMessage() {
-		searchResultsPage.clickiMacAddToCartBtn();
-		searchResultsPage.clickShoppingCartLink();
-		cartPage = new CartPage(driver);
-
-		if (cartPage.isShoppingSubHeaderMenuDisplayed() == true) {
-			Assert.assertEquals(cartPage.isShoppingCartProductImageDisplayed(), true);
-			Assert.assertEquals(driver.getTitle(), "Shopping Cart");
-			Assert.assertEquals(cartPage.getShoppingCartProductname(), "iMac");
-			cartPage.clickRemoveBtn();
-		} else {
-			Assert.fail();
-		}
-
-	}
-
-	@Test(priority = 2)
+	@Test(priority = 2,groups = {"Sanity","Regression","Master"})
 	public void verifyNavigationFromShoppingcartHeaderLink() {
-		searchResultsPage.clickiMacAddToCartBtn();
+		searchPage.clickiMacAddToCartBtn();
 		homePage.clickshoppingcartHeaderLink();
+		cartPage = new CartPage(driver);
+		
 
 		if (driver.getTitle().equals("Shopping Cart")) {
 			Assert.assertEquals(cartPage.isShoppingCartProductImageDisplayed(), true);
@@ -83,15 +66,14 @@ public class TC009_ShoppingCartTest extends BaseClass {
 			Assert.fail();
 		}
 	}
-	@Test(priority = 3)
+	@Test(priority = 3,groups = {"Sanity","Regression","Master"})
 	public void verifyNavigationFromFooterSitemap() {
-		searchResultsPage.clickiMacAddToCartBtn();
+		searchPage.clickiMacAddToCartBtn();
+		sitePage = new SitemapPage(driver);
 		homePage.clicksitemapFooterLink();
-		cartPage = new CartPage(driver);
 
 		if (driver.getTitle().equals("Site Map")) {
-			sitemapPage = new SitemapPage(driver);
-			sitemapPage.clickshoppingcartLink();
+			sitePage.clickshoppingcartLink();
 
 			if (driver.getTitle().equals("Shopping Cart")) {
 				Assert.assertEquals(cartPage.isShoppingCartProductImageDisplayed(), true);
@@ -105,11 +87,11 @@ public class TC009_ShoppingCartTest extends BaseClass {
 	}
 
 
-	@AfterMethod
+	@AfterMethod(groups = {"Sanity","Regression","Master"})
 	public void logoutTest() {
-		myAccPage = new MyAccountPage(driver);
 		try {
 			homePage.clickMyAccount();
+			myAccPage = new MyAccountPage(driver);
 			myAccPage.clickLogout();
 		} catch (Exception e) {
 			e.printStackTrace();

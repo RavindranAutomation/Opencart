@@ -9,6 +9,10 @@ import pageObjects.MyAccountPage;
 import testBase.BaseClass;
 
 public class TC002_LoginTest extends BaseClass{
+	
+	HomePage homePage;
+	LoginPage loginPage;
+	MyAccountPage myAccPage;
 
 	@Test(groups={"Sanity","Master"})
 	public void verify_login()
@@ -18,19 +22,19 @@ public class TC002_LoginTest extends BaseClass{
 		try
 		{
 		//HomePage
-		HomePage hp=new HomePage(driver);
-		hp.clickMyAccount();
-		hp.clickLogin();
+			homePage= new HomePage(driver);
+		homePage.clickMyAccount();
+		homePage.clickLogin();
 	
 		//Login
-		LoginPage lp=new LoginPage(driver);
-		lp.setEmail(p.getProperty("email"));
-		lp.setPassword(p.getProperty("password"));
-		lp.clickLogin();
+		loginPage=new LoginPage(driver);
+		loginPage.setEmail(p.getProperty("email"));
+		loginPage.setPassword(p.getProperty("password"));
+		loginPage.clickLogin();
 		
 		//MyAccount
-		MyAccountPage macc=new MyAccountPage(driver);
-		boolean targetPage=macc.isMyAccountPageExists();
+		myAccPage = new MyAccountPage(driver);
+		boolean targetPage=myAccPage.isMyAccountPageExists();
 		
 		Assert.assertTrue(targetPage);//Assert.assertEquals(targetPage, true,"Login failed");
 		}

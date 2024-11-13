@@ -1,1 +1,47 @@
+@Test(priority = 2,groups = {"Sanity","Regression","Master"})
+	public void verifyAddtoCartFromWishlistPage() {
+		searchResultsPage.clickWishlistButton();
+		Assert.assertEquals(searchResultsPage.iswishListSuccessMessageDisplayed(), true);
+		searchResultsPage.clickWishlistLink();
 
+		wishPage = new WishlistPage(driver);
+
+
+		if (wishPage.isWishlistSubmenuDisplayed()) {
+
+			wishPage.clickwishlistAddToCartBtn();
+			Assert.assertTrue(true);
+			if (wishPage.iswishlistToCartSuccessMessageDisplayed()) {
+				wishPage.clickwishlistShoppingcartLink();
+				Assert.assertTrue(true);
+
+			}else {
+				Assert.fail();
+			}
+
+		}
+
+			Assert.assertEquals(driver.getTitle(), "Shopping Cart");
+			Assert.assertEquals(cartPage.getShoppingCartProductname(), "iMac");
+			cartPage.clickRemoveBtn();
+
+
+	}
+	
+	
+	
+	@Test(priority = 1,groups = {"Sanity","Regression","Master"})
+	public void verifyNavigationFromSuccessMessage() {
+		searchResultsPage.clickiMacAddToCartBtn();
+		searchResultsPage.clickShoppingCartLink();
+		cartPage = new CartPage(driver);
+
+		if (driver.getTitle().equals("Shopping Cart")) {
+			Assert.assertEquals(cartPage.isShoppingCartProductImageDisplayed(), true);	
+			Assert.assertEquals(cartPage.getShoppingCartProductname(), "iMac");
+			cartPage.clickRemoveBtn();
+		} else {
+			Assert.fail();
+		}
+
+	}

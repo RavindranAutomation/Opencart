@@ -6,12 +6,14 @@ import org.openqa.selenium.support.FindBy;
 
 public class WishlistPage extends BasePage{
 
+	
+	
 	public WishlistPage(WebDriver driver) {
 		super(driver);
-		
+		// TODO Auto-generated constructor stub
 	}
-	
-	@FindBy(xpath = "(//a[@href='http://localhost/opencartsite/upload/index.php?route=account/wishlist'])[2]")
+
+	@FindBy(xpath = "(//a[@href='http://localhost/opencart/upload/index.php?route=account/wishlist'])[2]")
     WebElement wishlistSubmenu;
 	
 	@FindBy(xpath = "//button[@data-original-title='Add to Cart']")
@@ -31,7 +33,10 @@ public class WishlistPage extends BasePage{
 	}
 
 	public void clickwishlistAddToCartBtn() {
-		wishlistAddToCartBtn.click();
+		
+		jSClick(wishlistAddToCartBtn);
+		
+	
 
 	}
 	
@@ -41,6 +46,8 @@ public class WishlistPage extends BasePage{
 	}
 	
 	public void clickwishlistShoppingcartLink() {
-		wishlistShoppingcartLink.click();
+		
+			jSClick(wishlistShoppingcartLink);
+			
 	}
 }

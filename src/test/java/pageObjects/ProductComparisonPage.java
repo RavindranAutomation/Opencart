@@ -4,21 +4,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ProductComparisonPage extends BasePage{
+public class ProductComparisonPage extends BasePage {
 
 	public ProductComparisonPage(WebDriver driver) {
 		super(driver);
 
 	}
 
-	@FindBy(xpath ="//a[@href='http://localhost/opencartsite/upload/index.php?route=product/compare']")
+	@FindBy(xpath = "//a[@href='http://localhost/opencart/upload/index.php?route=product/compare']")
 	WebElement productComparisonHeader;
 
-	@FindBy (xpath = "//table[contains(@class,'table table-bordered')]/tbody[1]/tr[4]/td[2]")
+	@FindBy(xpath = "//td[normalize-space(text())='Product 14']")
 	WebElement iMacProductId;
 
-
-	@FindBy(xpath="(//table[@class='table table-bordered']//a)[1]")
+	@FindBy(xpath = "(//table[@class='table table-bordered']//a)[1]")
 	WebElement iMacProductName;
 
 	@FindBy(xpath = "(//table[@class='table table-bordered']//a)[2]")
@@ -26,7 +25,6 @@ public class ProductComparisonPage extends BasePage{
 
 	@FindBy(xpath = "(//div[@id='product-compare']//div)[1]")
 	WebElement productRemovedSuccessMessage;
-
 
 	public boolean verifyProductComParisonHeader() {
 		return productComparisonHeader.isDisplayed();
@@ -44,7 +42,10 @@ public class ProductComparisonPage extends BasePage{
 	}
 
 	public void clickRemoveBtn() {
-		removeBtn.click();
+		
+			jSClick(removeBtn);
+
+	
 
 	}
 
@@ -52,15 +53,5 @@ public class ProductComparisonPage extends BasePage{
 		return productRemovedSuccessMessage.getText();
 
 	}
-
-
-
-
-
-
-
-
-
-
 
 }

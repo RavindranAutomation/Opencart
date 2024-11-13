@@ -9,31 +9,30 @@ import pageObjects.SearchResultsPage;
 import testBase.BaseClass;
 
 public class TC005_ToolTipTest extends BaseClass {
-	HomePage hp;
-	LoginPage lp;
-	SearchResultsPage sp;
+	HomePage homePage;
+	LoginPage loginPage;
+	SearchResultsPage searchPage;
 
-	@Test
+	@Test(groups = {"Regression","Master"})
 	public void verifyAddToCartToolTipTextOfTheProduct() {
 		logger.info("***** Starting TC005_ToolTipTest *****");
-		try {
-			hp = new HomePage(driver);
-			hp.clickMyAccount();
-			hp.clickLogin();
+		homePage = new HomePage(driver);
 
-			// Login
-			LoginPage lp = new LoginPage(driver);
-			lp.setEmail(p.getProperty("email"));
-			lp.setPassword(p.getProperty("password"));
-			lp.clickLogin();
-			hp.clickHomeBtn();
+		homePage.clickMyAccount();
+		homePage.clickLogin();
 
-			Assert.assertEquals(hp.getAddtoWishListToolTip(), "Add to Wish List");
-			Assert.assertEquals(hp.getCompareProductToolTip(), "Compare this Product");
-		} catch (Exception e) {
-			e.printStackTrace();
-			Assert.fail();
-		}
+		// Login
+		loginPage = new LoginPage(driver);
+		loginPage.setEmail(p.getProperty("email"));
+		loginPage.setPassword(p.getProperty("password"));
+		loginPage.clickLogin();
+
+		homePage.enterProductName();
+		homePage.clickSearchButton();
+
+		Assert.assertEquals(homePage.getAddtoWishListToolTip(), "Add to Wish List");
+		Assert.assertEquals(homePage.getCompareProductToolTip(), "Compare this Product");
+
 
 	}
 

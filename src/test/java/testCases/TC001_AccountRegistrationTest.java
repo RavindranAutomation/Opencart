@@ -8,6 +8,8 @@ import pageObjects.HomePage;
 import testBase.BaseClass;
 
 public class TC001_AccountRegistrationTest extends BaseClass {
+	AccountRegistrationPage accRegPage;
+	HomePage homePage;
 	
 	@Test(groups={"Regression","Master"})
 	public void verify_account_registration()
@@ -16,32 +18,31 @@ public class TC001_AccountRegistrationTest extends BaseClass {
 		logger.debug("This is a debug log message");
 		try
 		{
-		HomePage hp=new HomePage(driver);
-		hp.clickMyAccount();
+			homePage = new HomePage(driver);
+		homePage.clickMyAccount();
 		logger.info("Clicked on MyAccount Link.. ");
 		
-		hp.clickRegister();
+		homePage.clickRegister();
 		logger.info("Clicked on Register Link.. ");
 		
-		AccountRegistrationPage regpage=new AccountRegistrationPage(driver);
-		
+		accRegPage = new AccountRegistrationPage(driver);
 		logger.info("Providing customer details...");
-		regpage.setFirstName(randomeString().toUpperCase());
-		regpage.setLastName(randomeString().toUpperCase());
-		regpage.setEmail(randomeString()+"@gmail.com");// randomly generated the email
-		regpage.setTelephone(randomeNumber());
+		accRegPage.setFirstName(randomeString().toUpperCase());
+		accRegPage.setLastName(randomeString().toUpperCase());
+		accRegPage.setEmail(randomeString()+"@gmail.com");// randomly generated the email
+		accRegPage.setTelephone(randomeNumber());
 			
 		String password=randomeAlphaNumberic();
 			
-		regpage.setPassword(password);
-		regpage.setConfirmPassword(password);
+		accRegPage.setPassword(password);
+		accRegPage.setConfirmPassword(password);
 		
-		regpage.setPrivacyPolicy();
-		regpage.clickContinue();
+		accRegPage.setPrivacyPolicy();
+		accRegPage.clickContinue();
 		
 		logger.info("Validating expected message..");
 		
-		String confmsg = regpage.getConfirmationMsg();
+		String confmsg = accRegPage.getConfirmationMsg();
 		Assert.assertEquals(confmsg, "Your Account Has Been Created!", "Confirmation message mismatch");
 
 		logger.info("Test passed");
