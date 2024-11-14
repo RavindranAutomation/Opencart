@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-13T19:38:00 IST" name="Master Suite" finished-at="2024-11-13T19:38:10 IST" duration-ms="9991">
+  <suite started-at="2024-11-13T23:28:54 IST" name="Master Suite" finished-at="2024-11-13T23:29:10 IST" duration-ms="15257">
     <groups>
+      <group name="Master">
+        <method signature="TC007_PDPTest.verifyPDPThumnails()[pri:1, instance:testCases.TC007_PDPTest@44040454]" name="verifyPDPThumnails" class="testCases.TC007_PDPTest"/>
+        <method signature="TC007_PDPTest.verifyProductDetails()[pri:2, instance:testCases.TC007_PDPTest@44040454]" name="verifyProductDetails" class="testCases.TC007_PDPTest"/>
+      </group> <!-- Master -->
+      <group name="Sanity">
+        <method signature="TC007_PDPTest.verifyPDPThumnails()[pri:1, instance:testCases.TC007_PDPTest@44040454]" name="verifyPDPThumnails" class="testCases.TC007_PDPTest"/>
+        <method signature="TC007_PDPTest.verifyProductDetails()[pri:2, instance:testCases.TC007_PDPTest@44040454]" name="verifyProductDetails" class="testCases.TC007_PDPTest"/>
+      </group> <!-- Sanity -->
+      <group name="Regression">
+        <method signature="TC007_PDPTest.verifyPDPThumnails()[pri:1, instance:testCases.TC007_PDPTest@44040454]" name="verifyPDPThumnails" class="testCases.TC007_PDPTest"/>
+        <method signature="TC007_PDPTest.verifyProductDetails()[pri:2, instance:testCases.TC007_PDPTest@44040454]" name="verifyProductDetails" class="testCases.TC007_PDPTest"/>
+      </group> <!-- Regression -->
     </groups>
-    <test started-at="2024-11-13T19:38:00 IST" name="Test" finished-at="2024-11-13T19:38:10 IST" duration-ms="9991">
-      <class name="testCases.TC011_CheckoutTest">
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC011_CheckoutTest@44e3a2b2]" started-at="2024-11-13T19:38:00 IST" name="setup" finished-at="2024-11-13T19:38:03 IST" duration-ms="2770" status="PASS">
+    <test started-at="2024-11-13T23:28:54 IST" name="Test" finished-at="2024-11-13T23:29:10 IST" duration-ms="15257">
+      <class name="testCases.TC007_PDPTest">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC007_PDPTest@44040454]" started-at="2024-11-13T23:28:55 IST" name="setup" finished-at="2024-11-13T23:28:57 IST" duration-ms="2823" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,19 +35,35 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="loginTest()[pri:0, instance:testCases.TC011_CheckoutTest@44e3a2b2]" started-at="2024-11-13T19:38:03 IST" name="loginTest" finished-at="2024-11-13T19:38:05 IST" duration-ms="2762" status="PASS">
+        <test-method is-config="true" signature="loginTest()[pri:0, instance:testCases.TC007_PDPTest@44040454]" started-at="2024-11-13T23:28:57 IST" name="loginTest" finished-at="2024-11-13T23:29:01 IST" duration-ms="3660" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method signature="verify_CheckOut_With_ExistingAddress()[pri:0, instance:testCases.TC011_CheckoutTest@44e3a2b2]" started-at="2024-11-13T19:38:05 IST" name="verify_CheckOut_With_ExistingAddress" finished-at="2024-11-13T19:38:09 IST" duration-ms="3783" status="PASS">
+        <test-method signature="verifyPDPThumnails()[pri:1, instance:testCases.TC007_PDPTest@44040454]" started-at="2024-11-13T23:29:01 IST" name="verifyPDPThumnails" finished-at="2024-11-13T23:29:04 IST" duration-ms="2808" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verify_CheckOut_With_ExistingAddress -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC011_CheckoutTest@44e3a2b2]" started-at="2024-11-13T19:38:09 IST" name="tearDown" finished-at="2024-11-13T19:38:10 IST" duration-ms="229" status="PASS">
+        </test-method> <!-- verifyPDPThumnails -->
+        <test-method is-config="true" signature="logoutTest()[pri:0, instance:testCases.TC007_PDPTest@44040454]" started-at="2024-11-13T23:29:04 IST" name="logoutTest" finished-at="2024-11-13T23:29:05 IST" duration-ms="700" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutTest -->
+        <test-method is-config="true" signature="loginTest()[pri:0, instance:testCases.TC007_PDPTest@44040454]" started-at="2024-11-13T23:29:05 IST" name="loginTest" finished-at="2024-11-13T23:29:08 IST" duration-ms="3583" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method signature="verifyProductDetails()[pri:2, instance:testCases.TC007_PDPTest@44040454]" started-at="2024-11-13T23:29:08 IST" name="verifyProductDetails" finished-at="2024-11-13T23:29:09 IST" duration-ms="196" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductDetails -->
+        <test-method is-config="true" signature="logoutTest()[pri:0, instance:testCases.TC007_PDPTest@44040454]" started-at="2024-11-13T23:29:09 IST" name="logoutTest" finished-at="2024-11-13T23:29:09 IST" duration-ms="515" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC007_PDPTest@44040454]" started-at="2024-11-13T23:29:09 IST" name="tearDown" finished-at="2024-11-13T23:29:10 IST" duration-ms="278" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TC011_CheckoutTest -->
+      </class> <!-- testCases.TC007_PDPTest -->
     </test> <!-- Test -->
   </suite> <!-- Master Suite -->
 </testng-results>

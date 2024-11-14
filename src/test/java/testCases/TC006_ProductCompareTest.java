@@ -10,7 +10,7 @@ import pageObjects.SearchResultsPage;
 import testBase.BaseClass;
 
 public class TC006_ProductCompareTest extends BaseClass {
-	
+
 	HomePage homePage;
 	LoginPage loginPage;
 	SearchResultsPage searchPage;
@@ -18,12 +18,11 @@ public class TC006_ProductCompareTest extends BaseClass {
 
 	@Test(groups = { "Regression", "Master" })
 	public void verifyProductCompareWith() {
-		try {
+		// Login
 			homePage = new HomePage(driver);
 			homePage.clickMyAccount();
 			homePage.clickLogin();
 
-			// Login
 			loginPage = new LoginPage(driver);
 			loginPage.setEmail(p.getProperty("email"));
 			loginPage.setPassword(p.getProperty("password"));
@@ -32,36 +31,29 @@ public class TC006_ProductCompareTest extends BaseClass {
 			homePage.enterProductName();
 			homePage.clickSearchButton();
 
-			try {
-				searchPage = new SearchResultsPage(driver);
-				searchPage.clickImacCompareBtn();
-				searchPage.clickProductComparisonLink();
+			searchPage = new SearchResultsPage(driver);
+			searchPage.clickImacCompareBtn();
+			searchPage.clickProductComparisonLink();
 
-			} catch (Exception e) {
-				logger.error(e.getMessage());
-
-				e.printStackTrace();
-			}
 			pdpPage = new ProductComparisonPage(driver);
-			Assert.assertEquals(pdpPage.verifyProductComParisonHeader(), true);
+		
+		
+		Assert.assertEquals(pdpPage.verifyProductComParisonHeader(), true);
 
-			Assert.assertEquals(pdpPage.verifyImacProductId(), "Product 14");
+		Assert.assertEquals(pdpPage.verifyImacProductId(), "Product 14");
 
-			Assert.assertEquals(pdpPage.verifyImacProductName(), "iMac");
+		Assert.assertEquals(pdpPage.verifyImacProductName(), "iMac");
 
-			pdpPage.clickRemoveBtn();
+		pdpPage.clickRemoveBtn();
 
-			if (pdpPage.verifyproductRemovedSuccessMessage()
-					.contains("Success: You have modified your product comparison!")) {
-				Assert.assertTrue(true);
-			} else {
-				Assert.fail();
-			}
-		} catch (Exception e) {
+		if (pdpPage.verifyproductRemovedSuccessMessage()
+				.contains("Success: You have modified your product comparison!")) {
+			Assert.assertTrue(true);
+		} else {
 			Assert.fail();
-
 		}
-
-	}
+	} 
 
 }
+
+

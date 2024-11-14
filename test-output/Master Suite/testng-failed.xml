@@ -8,14 +8,15 @@
     <parameter name="os" value="Windows"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.TC011_CheckoutTest">
+      <class name="testCases.TC007_PDPTest">
         <methods>
           <include name="tearDown"/>
-          <include name="setup"/>
+          <include name="verifyProductDetails"/>
           <include name="loginTest"/>
-          <include name="verify_CheckOut_With_ExistingAddress"/>
+          <include name="setup"/>
+          <include name="logoutTest"/>
         </methods>
-      </class> <!-- testCases.TC011_CheckoutTest -->
+      </class> <!-- testCases.TC007_PDPTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Master Suite] -->

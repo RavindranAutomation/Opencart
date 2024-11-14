@@ -45,3 +45,19 @@
 		}
 
 	}
+
+	
+	
+	@Test(priority = 3)
+	public void verifyEmptyProductSearchTest() {
+		try {
+			homePage.clearSearchBar();
+			homePage.clickSearchButton();
+
+			boolean searchResultsExp = searchPage.isNoSearchResultsDisplayed();
+			Assert.assertEquals(searchResultsExp, true);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Test Case is failed");
+		}
+	}
