@@ -26,16 +26,8 @@ public class TC008_AddToCartTest extends BaseClass {
 	@BeforeMethod(groups = {"Sanity","Regression","Master"})
 	public void loginTest() {
 		try {
+			BaseClass.login();
 			homePage = new HomePage(driver);
-			homePage.clickMyAccount();
-			homePage.clickLogin();
-
-			// Login
-			loginPage = new LoginPage(driver);
-			loginPage.setEmail(p.getProperty("email"));
-			loginPage.setPassword(p.getProperty("password"));
-			loginPage.clickLogin();
-
 			homePage.enterProductName();
 			homePage.clickSearchButton();
 

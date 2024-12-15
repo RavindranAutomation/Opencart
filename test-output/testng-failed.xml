@@ -8,16 +8,15 @@
     <parameter name="os" value="Windows"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.TC004_SearchTest">
+      <class name="testCases.TC008_AddToCartTest">
         <methods>
-          <include name="verifyInvalidProductSearchTest"/>
           <include name="tearDown"/>
-          <include name="verifyValidProductSearchTest"/>
+          <include name="loginTest"/>
           <include name="logoutTest"/>
           <include name="setup"/>
-          <include name="applicationLogin"/>
+          <include name="verifyAddtoCartFromSearchResultsPage"/>
         </methods>
-      </class> <!-- testCases.TC004_SearchTest -->
+      </class> <!-- testCases.TC008_AddToCartTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Master Suite] -->

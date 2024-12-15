@@ -132,3 +132,12 @@
 2024-12-15 12:45:04 INFO  TC004_SearchTest:30 - ***** Starting TC004_Searchtest *****
 2024-12-15 12:45:06 INFO  TC004_SearchTest:69 - ***** Ended TC004_Searchtest *****
 2024-12-15 12:45:09 INFO  TC004_SearchTest:69 - ***** Ended TC004_Searchtest *****
+2024-12-15 13:25:17 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Ravin\git\Opencart\master.xml
+
+2024-12-15 13:26:18 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Ravin\git\Opencart\master.xml
+
+2024-12-15 13:27:15 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Ravin\git\Opencart\master.xml
+

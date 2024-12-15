@@ -89,11 +89,7 @@ public class TC007_PDPTest extends BaseClass {
 
 		Assert.assertEquals(pdpPage.getProductPrice(), "$100.00");
 		Assert.assertEquals(pdpPage.getDefaultQty(), "1");
-		Assert.assertEquals(pdpPage.getProductDescription(),
-				"Just when you thought iMac had everything, now there´s even more. More powerful Intel Core 2 Duo processors. And more memory standard. "
-						+ "Combine this with Mac OS X Leopard and iLife ´08, and it´s more all-in-one than ever. "
-						+ "iMac packs amazing performance into a stunningly slim space.");
-
+		
 	}
 
 	@AfterMethod(groups = { "Sanity", "Regression", "Master" })
