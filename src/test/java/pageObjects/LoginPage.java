@@ -4,15 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage extends BasePage  {
+public class LoginPage extends BasePage {
+	WebDriver driver;
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
-		
-	}
 
-	WebDriver driver;
-	
+	}
 
 	@FindBy(xpath = "//input[@id='input-email']")
 	WebElement txtEmailAddress;
@@ -23,7 +21,6 @@ public class LoginPage extends BasePage  {
 	@FindBy(xpath = "//input[@value='Login']")
 	WebElement btnLogin;
 
-
 	public void setEmail(String email) {
 		typeTextIntoElement(txtEmailAddress, email, 0);
 	}
@@ -33,12 +30,9 @@ public class LoginPage extends BasePage  {
 	}
 
 	public void clickLogin() {
-		
-			jSClick(btnLogin);
 
+		jSClick(btnLogin);
 
-	
-		
 	}
 
 }

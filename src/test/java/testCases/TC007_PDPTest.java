@@ -53,7 +53,7 @@ public class TC007_PDPTest extends BaseClass {
 	}
 
 	@Test(priority = 1, groups = { "Sanity", "Regression", "Master" })
-	public void verifyPDPThumnails() throws AWTException, InterruptedException {
+	public void verifyPDPThumbnails() throws AWTException, InterruptedException {
 		pdpPage = new ProductDisplayPage(driver);
 
 		if (pdpPage.verifyThumbnail() == true) {

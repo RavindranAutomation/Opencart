@@ -15,11 +15,11 @@ import utilities.DataProviders;
 
 Data is invalid - login success - test fail  - logout
  					login failed - test pass
-*/
+ */
 
 
 public class TC003_LoginDDT extends BaseClass {
-	
+
 	HomePage homePage;
 	LoginPage loginPage;
 	MyAccountPage myAccPage;
@@ -28,65 +28,65 @@ public class TC003_LoginDDT extends BaseClass {
 	public void verify_loginDDT(String email, String pwd, String exp) throws InterruptedException
 	{
 		logger.info("***** stating TC_003_LoginDDT ******");
-		
+
 		try
 		{
-		//HomePage
+			//HomePage
 			homePage = new HomePage(driver);
 			homePage.clickMyAccount();
 			homePage.clickLogin();
-		
-		//Login	
-			
+
+			//Login	
+
 			loginPage = new LoginPage(driver);
-		loginPage.setEmail(email);
-		loginPage.setPassword(pwd);
-		loginPage.clickLogin();
-		
-		
-			
-		//MyAccount
-		myAccPage = new MyAccountPage(driver);
-		boolean targetPage=myAccPage.isMyAccountPageExists();
-		
-		
-		if(exp.equalsIgnoreCase("Valid"))
-		{
-			if(targetPage==true)
-			{			
-				myAccPage.clickLogout();
-				Assert.assertTrue(true);
-				
-			}
-			else
+			loginPage.setEmail(email);
+			loginPage.setPassword(pwd);
+			loginPage.clickLogin();
+
+
+
+			//MyAccount
+			myAccPage = new MyAccountPage(driver);
+			boolean targetPage=myAccPage.isMyAccountPageExists();
+
+
+			if(exp.equalsIgnoreCase("Valid"))
 			{
-				Assert.assertTrue(false);
+				if(targetPage==true)
+				{			
+					myAccPage.clickLogout();
+					Assert.assertTrue(true);
+
+				}
+				else
+				{
+					Assert.assertTrue(false);
+				}
 			}
-		}
-		
-		if(exp.equalsIgnoreCase("Invalid"))
-		{
-			if(targetPage==true)
+
+			if(exp.equalsIgnoreCase("Invalid"))
 			{
-				myAccPage.clickLogout();
-				Assert.assertTrue(false);
-				
+				if(targetPage==true)
+				{
+					myAccPage.clickLogout();
+					Assert.assertTrue(false);
+
+				}
+				else
+				{
+					Assert.assertTrue(true);
+				}
 			}
-			else
-			{
-				Assert.assertTrue(true);
-			}
-		}
-		
+
 		}catch(Exception e)
 		{
 			Assert.fail();
 		}
 		Thread.sleep(3000);
 		logger.info("***** Finished TC_003_LoginDDT ******");
-		
+
 	}
-	
+
 }
 
 

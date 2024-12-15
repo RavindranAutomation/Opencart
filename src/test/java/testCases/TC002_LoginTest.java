@@ -21,18 +21,9 @@ public class TC002_LoginTest extends BaseClass{
 		
 		try
 		{
-		//HomePage
-			homePage= new HomePage(driver);
-		homePage.clickMyAccount();
-		homePage.clickLogin();
-	
-		//Login
-		loginPage=new LoginPage(driver);
-		loginPage.setEmail(p.getProperty("email"));
-		loginPage.setPassword(p.getProperty("password"));
-		loginPage.clickLogin();
+			
+		BaseClass.login();
 		
-		//MyAccount
 		myAccPage = new MyAccountPage(driver);
 		boolean targetPage=myAccPage.isMyAccountPageExists();
 		

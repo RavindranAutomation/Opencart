@@ -1,131 +1,134 @@
-2024-11-13 00:01:40 INFO  Utils:112 - [TestNG] Running:
+2024-12-15 12:21:48 INFO  Utils:112 - [TestNG] Running:
   C:\Users\Ravin\git\Opencart\master.xml
 
-2024-11-13 00:03:03 INFO  Utils:112 - [TestNG] Running:
+2024-12-15 12:21:54 INFO  TC002_LoginTest:20 - ****** Startign TC_002_LoginTest *****
+2024-12-15 12:21:56 INFO  TC002_LoginTest:45 - ****** Finished TC_002_LoginTest *****
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 1 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 2 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 3 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 11 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 1 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:25:15 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Ravin\AppData\Local\Temp\testng-eclipse-1625748950\testng-customsuite.xml
+
+2024-12-15 12:25:15 INFO  Utils:112 - [Utils] DynamicGraphHelper.createDynamicGraph() took 7 ms.
+2024-12-15 12:25:16 INFO  Utils:112 - [TestNG] Time taken by org.testng.reporters.SuiteHTMLReporter@60e5272: 32 ms
+2024-12-15 12:25:16 INFO  Utils:112 - [TestNG] Time taken by org.testng.reporters.jq.Main@66ba7e45: 77 ms
+2024-12-15 12:25:16 INFO  Utils:112 - [TestNG] Time taken by org.testng.reporters.FailedReporter@61c76850: 18 ms
+2024-12-15 12:25:16 INFO  Utils:112 - [TestNG] Time taken by org.testng.reporters.XMLReporter@746cd757: 19 ms
+2024-12-15 12:25:16 INFO  Utils:112 - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@6b760460: 14 ms
+2024-12-15 12:25:16 INFO  Utils:112 - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@3b7b05a8: 8 ms
+2024-12-15 12:25:16 INFO  Utils:112 - [TestNG] Time taken by org.testng.internal.ExitCodeListener@3d36dff4: 0 ms
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 1 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 2 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 4 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 9 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 1 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\Ravin\AppData\Local\Temp\testng-eclipse--353877731\testng-customsuite.xml
+
+2024-12-15 12:31:11 INFO  Utils:112 - [Utils] DynamicGraphHelper.createDynamicGraph() took 5 ms.
+2024-12-15 12:31:11 INFO  Utils:112 - [TestNG] Time taken by org.testng.reporters.SuiteHTMLReporter@13c3c1e1: 33 ms
+2024-12-15 12:31:11 INFO  Utils:112 - [TestNG] Time taken by org.testng.reporters.jq.Main@78fb9a67: 68 ms
+2024-12-15 12:31:11 INFO  Utils:112 - [TestNG] Time taken by org.testng.reporters.FailedReporter@20b5f2ac: 14 ms
+2024-12-15 12:31:11 INFO  Utils:112 - [TestNG] Time taken by org.testng.reporters.XMLReporter@69637b10: 19 ms
+2024-12-15 12:31:11 INFO  Utils:112 - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@58e6d4b8: 10 ms
+2024-12-15 12:31:11 INFO  Utils:112 - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@38f57b3d: 10 ms
+2024-12-15 12:31:11 INFO  Utils:112 - [TestNG] Time taken by org.testng.internal.ExitCodeListener@51850751: 1 ms
+2024-12-15 12:33:52 INFO  Utils:112 - [TestNG] Running:
   C:\Users\Ravin\git\Opencart\master.xml
 
-2024-11-13 00:04:06 INFO  Utils:112 - [TestNG] Running:
+2024-12-15 12:34:01 INFO  TC001_AccountRegistrationTest:17 - ***** Starting TC001_AccountRegistrationTest  ****
+2024-12-15 12:34:02 INFO  TC001_AccountRegistrationTest:23 - Clicked on MyAccount Link.. 
+2024-12-15 12:34:03 INFO  TC001_AccountRegistrationTest:26 - Clicked on Register Link.. 
+2024-12-15 12:34:03 INFO  TC001_AccountRegistrationTest:29 - Providing customer details...
+2024-12-15 12:34:07 INFO  TC001_AccountRegistrationTest:43 - Validating expected message..
+2024-12-15 12:34:07 INFO  TC001_AccountRegistrationTest:48 - Test passed
+2024-12-15 12:34:07 INFO  TC001_AccountRegistrationTest:57 - ***** Finished TC001_AccountRegistrationTest *****
+2024-12-15 12:36:51 INFO  Utils:112 - [TestNG] Running:
   C:\Users\Ravin\git\Opencart\master.xml
 
-2024-11-13 00:08:22 INFO  Utils:112 - [TestNG] Running:
+2024-12-15 12:36:54 INFO  TC002_LoginTest:20 - ****** Startign TC_002_LoginTest *****
+2024-12-15 12:36:56 INFO  TC002_LoginTest:35 - ****** Finished TC_002_LoginTest *****
+2024-12-15 12:38:10 INFO  Utils:112 - [TestNG] Running:
   C:\Users\Ravin\git\Opencart\master.xml
 
-2024-11-13 00:09:30 INFO  Utils:112 - [TestNG] Running:
+2024-12-15 12:38:15 INFO  TC004_SearchTest:30 - ***** Starting TC004_Searchtest *****
+2024-12-15 12:39:08 INFO  Utils:112 - [TestNG] Running:
   C:\Users\Ravin\git\Opencart\master.xml
 
-2024-11-13 00:10:29 INFO  Utils:112 - [TestNG] Running:
+2024-12-15 12:39:13 INFO  TC004_SearchTest:30 - ***** Starting TC004_Searchtest *****
+2024-12-15 12:41:19 INFO  Utils:112 - [TestNG] Running:
   C:\Users\Ravin\git\Opencart\master.xml
 
-2024-11-13 00:14:57 INFO  Utils:112 - [TestNG] Running:
+2024-12-15 12:41:24 INFO  TC004_SearchTest:30 - ***** Starting TC004_Searchtest *****
+2024-12-15 12:41:27 INFO  TC004_SearchTest:69 - ***** Ended TC004_Searchtest *****
+2024-12-15 12:41:30 INFO  TC004_SearchTest:69 - ***** Ended TC004_Searchtest *****
+2024-12-15 12:42:59 INFO  Utils:112 - [TestNG] Running:
   C:\Users\Ravin\git\Opencart\master.xml
 
-2024-11-13 00:16:32 INFO  Utils:112 - [TestNG] Running:
+2024-12-15 12:44:49 INFO  Utils:112 - [TestNG] Running:
   C:\Users\Ravin\git\Opencart\master.xml
 
-2024-11-13 00:17:59 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 00:20:11 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 00:21:22 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 00:25:38 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 00:26:40 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 00:28:25 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 19:13:45 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 19:18:36 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 19:22:40 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 19:23:04 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 19:27:01 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 19:29:17 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 19:31:07 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 19:31:51 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 19:33:45 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 19:36:40 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 19:38:00 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 20:23:26 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 20:23:31 INFO  TC005_ToolTipTest:18 - ***** Starting TC005_ToolTipTest *****
-2024-11-13 22:40:48 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 22:40:53 INFO  TC004_SearchTest:19 - ***** Starting TC004_Searchtest *****
-2024-11-13 22:41:31 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 22:42:10 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 22:42:36 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 22:43:21 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 22:43:50 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 23:14:21 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 23:14:33 INFO  TC004_SearchTest:37 - ***** Starting TC004_Searchtest *****
-2024-11-13 23:15:46 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 23:15:51 INFO  TC004_SearchTest:37 - ***** Starting TC004_Searchtest *****
-2024-11-13 23:17:02 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 23:17:08 INFO  TC004_SearchTest:37 - ***** Starting TC004_Searchtest *****
-2024-11-13 23:19:19 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 23:19:24 INFO  TC004_SearchTest:37 - ***** Starting TC004_Searchtest *****
-2024-11-13 23:19:26 INFO  TC004_SearchTest:71 - ***** Ended TC004_Searchtest *****
-2024-11-13 23:19:29 INFO  TC004_SearchTest:71 - ***** Ended TC004_Searchtest *****
-2024-11-13 23:20:46 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 23:20:51 INFO  TC004_SearchTest:38 - ***** Starting TC004_Searchtest *****
-2024-11-13 23:21:03 INFO  TC004_SearchTest:77 - ***** Ended TC004_Searchtest *****
-2024-11-13 23:21:07 INFO  TC004_SearchTest:77 - ***** Ended TC004_Searchtest *****
-2024-11-13 23:26:36 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 23:28:10 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
-2024-11-13 23:28:54 INFO  Utils:112 - [TestNG] Running:
-  C:\Users\Ravin\git\Opencart\master.xml
-
+2024-12-15 12:44:52 INFO  TC001_AccountRegistrationTest:17 - ***** Starting TC001_AccountRegistrationTest  ****
+2024-12-15 12:44:52 INFO  TC001_AccountRegistrationTest:23 - Clicked on MyAccount Link.. 
+2024-12-15 12:44:53 INFO  TC001_AccountRegistrationTest:26 - Clicked on Register Link.. 
+2024-12-15 12:44:53 INFO  TC001_AccountRegistrationTest:29 - Providing customer details...
+2024-12-15 12:44:56 INFO  TC001_AccountRegistrationTest:43 - Validating expected message..
+2024-12-15 12:44:56 INFO  TC001_AccountRegistrationTest:48 - Test passed
+2024-12-15 12:44:56 INFO  TC001_AccountRegistrationTest:57 - ***** Finished TC001_AccountRegistrationTest *****
+2024-12-15 12:44:59 INFO  TC002_LoginTest:20 - ****** Startign TC_002_LoginTest *****
+2024-12-15 12:45:00 INFO  TC002_LoginTest:36 - ****** Finished TC_002_LoginTest *****
+2024-12-15 12:45:04 INFO  TC004_SearchTest:30 - ***** Starting TC004_Searchtest *****
+2024-12-15 12:45:06 INFO  TC004_SearchTest:69 - ***** Ended TC004_Searchtest *****
+2024-12-15 12:45:09 INFO  TC004_SearchTest:69 - ***** Ended TC004_Searchtest *****

@@ -21,27 +21,19 @@ public class TC004_SearchTest extends BaseClass {
 
 	@BeforeMethod(groups = { "Sanity", "Regression", "Master" })
 	public void loginTest() {
-		// Login
-		homePage = new HomePage(driver);
-		homePage.clickMyAccount();
-		homePage.clickLogin();
-
-		loginPage = new LoginPage(driver);
-		loginPage.setEmail(p.getProperty("email"));
-		loginPage.setPassword(p.getProperty("password"));
-		loginPage.clickLogin();
+		BaseClass.login();
 
 	}
 
 	@Test(priority = 1, groups = { "Sanity", "Regression", "Master" })
 	public void verifyValidProductSearchTest() {
 		logger.info("***** Starting TC004_Searchtest *****");
-
+		homePage = new HomePage(driver);
 		homePage.enterProductName();
 		homePage.clickSearchButton();
 		searchPage = new SearchResultsPage(driver);
-		
-		
+
+
 
 		String expHeader = searchPage.verifyResultsHeader();
 		boolean iMacImgExp = searchPage.isiMacDisplayed();
@@ -49,7 +41,7 @@ public class TC004_SearchTest extends BaseClass {
 
 		SoftAssert assert1 = new SoftAssert();
 		assert1.assertEquals(expHeader, "Search - iMac");
-		
+
 		//Assert.assertEquals(expHeader, "Search - iMac");
 		Assert.assertEquals(iMacImgExp, true);
 		Assert.assertEquals(iMacnNameExp, true);
@@ -73,7 +65,7 @@ public class TC004_SearchTest extends BaseClass {
 		homePage.clickMyAccount();
 		myAccPage = new MyAccountPage(driver);
 		myAccPage.clickLogout();
-		
+
 		logger.info("***** Ended TC004_Searchtest *****");
 	}
 

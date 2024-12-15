@@ -16,15 +16,23 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
+
+import pageObjects.HomePage;
+import pageObjects.LoginPage;
+import pageObjects.MyAccountPage;
 
 public class BaseClass {
 
 	public static WebDriver driver;
 	public Logger logger; // Log4j
-	public Properties p;
+	public static Properties p;
+	static HomePage homePage;
+	static LoginPage loginPage;
+	static MyAccountPage myAccPage;
 
 	@BeforeClass(groups = { "Sanity", "Regression", "Master" })
 	@Parameters({ "os", "browser" })
@@ -65,7 +73,6 @@ public class BaseClass {
 		driver.quit();
 	}
 
-	
 	public String randomeString() {
 		String generatedstring = RandomStringUtils.randomAlphabetic(5);
 		return generatedstring;
@@ -95,6 +102,19 @@ public class BaseClass {
 		sourceFile.renameTo(targetFile);
 
 		return targetFilePath;
+
+	}
+	
+	public static void login() {
+		homePage= new HomePage(driver);
+		homePage.clickMyAccount();
+		homePage.clickLogin();
+	
+		//Login
+		loginPage=new LoginPage(driver);
+		loginPage.setEmail(p.getProperty("email"));
+		loginPage.setPassword(p.getProperty("password"));
+		loginPage.clickLogin();
 
 	}
 

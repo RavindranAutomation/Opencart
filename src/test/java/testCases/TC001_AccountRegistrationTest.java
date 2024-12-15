@@ -18,7 +18,7 @@ public class TC001_AccountRegistrationTest extends BaseClass {
 		logger.debug("This is a debug log message");
 		try
 		{
-			homePage = new HomePage(driver);
+       homePage = new HomePage(driver);
 		homePage.clickMyAccount();
 		logger.info("Clicked on MyAccount Link.. ");
 		
